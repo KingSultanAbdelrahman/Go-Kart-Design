@@ -3,7 +3,22 @@
 ## Project Goal 
 
 ## Engineering Requirements 
-
+1. Kart shall accelerate from 0 to 30 mph in 10–12 seconds with a 160–200 lb driver.
+2. Kart shall stop from 30 mph to 0 in ≤ 3 seconds on dry pavement.
+3. Kart shall complete 5 repeated 30-to-0 mph stops without brake fade or mechanical failure.
+4. Front steering geometry shall be within ±10–15% of ideal Ackermann angles across the normal steering range.
+5. Low-speed turning radius shall be ≤ ___ ft.
+6. Kart shall not tip during steady-state turning at design cornering speed, with stability factor ≥ 1.3–1.5.
+7. Chassis shall meet FOS ≥ 2 against yield for vertical bump, braking, and lateral cornering load cases.
+8. Braking torque at the wheel shall be ≥ 2× engine idle drive torque at the wheel.
+9. Throttle shall automatically return to idle within 1 second after release.
+10. Kart shall include driver-accessible and external kill switches.
+11. Chain and sprockets shall be guarded from driver contact.
+12. Chain alignment error shall be ≤ 1–2 mm, with adjustable chain tension.
+13. Driven sprocket shall be swappable in ≤ 15 minutes using common tools.
+14. Kart shall complete a 30-minute endurance test with no critical failures.
+15. Measured acceleration, top speed, and braking performance shall match predictions within ±15–20%.
+16. Final deliverables shall include CAD assembly, drawings, BOM, calculations, test plan, test data, and design review report.
 ## Engineering Design Decisions 
 
 ### Steering 
