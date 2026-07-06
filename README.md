@@ -31,9 +31,11 @@
 ### Chassis Geometry 
 #### Center of Mass and Tipping Prevention 
 For a vehicle to make a turn, a frictional force is exerted by the tires to move the vehicle in the direction the wheel points. This frictional force must at a minimum equal or exceed the opposing centrifugal "force" to make the turn without sliding or skidding of the tire.  
+
 $$
 μ W >= \frac{W v^2}{g r}
 $$
+
 The maximum velocity a gokart can go prior to sliding is thus:
 $$
 v = sqrt{μ g r}
