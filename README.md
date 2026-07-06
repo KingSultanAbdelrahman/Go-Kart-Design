@@ -34,14 +34,14 @@ A ground-up go-kart design project focused on steering geometry, drivetrain sizi
 For a vehicle to make a turn, a frictional force is exerted by the tires to move the vehicle in the direction the wheel points. This frictional force must at a minimum equal or exceed the opposing centrifugal "force" to make the turn without sliding or skidding of the tire.  
 
 $$
-\f_{s} = μ FN
+Ff = μ m g
 $$
 
 $$
 Fc = \frac{mv^2}{r}
 $$
 $$
-μ W >= \frac{W v^2}{g r}
+μ m g >= \frac{m v^2}{ r}
 $$
 
 The maximum velocity a gokart can go prior to sliding is thus:
