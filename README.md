@@ -30,6 +30,9 @@
 
 ### Chassis Geometry 
 #### Center of Mass and Tipping Prevention 
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
 
 ### Brakes 
 #### Controlled & Effective Stop 
