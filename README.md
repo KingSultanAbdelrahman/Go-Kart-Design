@@ -35,7 +35,9 @@ $$
 μ W >= \frac{W v^2}{g r}
 $$
 The maximum velocity a gokart can go prior to sliding is thus:
+$$
 v = sqrt{μ g r}
+$$
 ### Brakes 
 #### Controlled & Effective Stop 
 
