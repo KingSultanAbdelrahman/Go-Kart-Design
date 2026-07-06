@@ -29,8 +29,12 @@ A ground-up go-kart design project focused on steering geometry, drivetrain sizi
 #### 4 Spindle and Kingpin Design
 #### 5 Frame Mounting Points
 
-### Chassis Geometry 
-#### Center of Mass, Sliding and Tipping Prevention 
+### Stability and Rollover
+- Center of mass height estimate
+- Track width effect on tipping
+- Tipping moment vs resisting moment
+- Maximum safe cornering speed
+
 For a vehicle to make a turn, a frictional force is exerted by the tires to move the vehicle in the direction the wheel points. This frictional force must at a minimum equal or exceed the opposing centrifugal "force" to make the turn without sliding or skidding of the tire.  
 
 $$
@@ -43,24 +47,86 @@ $$
 $$
 μ m g >= \frac{m v^2}{ r}
 $$
+
 where: 
 - \( F_c \) = required centripetal force
 - \( m \) = vehicle mass
 - \( v \) = vehicle speed
 - \( r \) = turn radius
+
 The maximum velocity a gokart can go prior to sliding is thus:
 
 $$
 v = \sqrt{μ g r}
 $$
-For a vehicle to not roll over or tip while turning, net torque must equal zero. 
+
+For a vehicle to not roll over or tip while making a turn, net torque must equal zero. 
 
 $$
 m g T/2 >= Fc h
 $$
 
-### Brakes 
-#### Controlled & Effective Stop 
+The maximum velocity a gokart can go prior to tipping is: 
+
+$$
+v = \sqrt{\frac{g T r}{2 h}}
+$$
+
+### Drivetrain
+- Engine torque and RPM assumptions
+
+The net force required on the gokart to reach 30mph or 44ft/s in 12 secs, is:   
+
+$$
+F_{net} = a_{net} m = \frac{vm}{t} = \frac{44 * m}{12} = 34.31lbf
+$$
+
+$$
+F_{net} = F_{wheel} - F_{rolling}
+$$
+
+where: 
+- \( F_{wheel} \) = required forward force felt by the wheel
+
+Assuming rolling friction coffeicent = 0.03 and W = 300lbs
+
+$$
+F_{rolling} = 0.03 * 300 = 9lbf
+$$
+
+$$
+F_{wheel} = F{net} + Ffrolling = 43.3lbf 
+$$
+
+The force felt by the wheel is: 
+
+F_{wheel} = \frac{T{engine} * G * η}{r}
+
+where: 
+- \( T_{engine} \) = Engine Torque
+- \( G ) = Gear Ratio
+- \( η ) = Gear Ratio Efficency
+- \( r ) = Driven Wheel Radius  
+
+The maximum torque of a Predator 212 engine is 8.1 ftlbs 
+  
+- Gear ratio selection
+- Wheel torque calculation
+- Estimated top speed under load
+
+### Braking System
+- Required braking torque
+- Wheel lockup condition
+- Tire-road friction limit
+- Brake force distribution considerations
+### Chassis Geometry 
+#### Center of Mass, Sliding and Tipping Prevention 
+
+### Frame and Chassis
+- Wheelbase and track width selection
+- Mounting points
+- Structural packaging
+- CAD model development
 
 ## 5. CAD and Analysis
 Include screenshots, drawings, dimensions, and calculations.
