@@ -1,6 +1,7 @@
 # Go-Kart-Design
 
 ## Project Goal 
+A ground-up go-kart design project focused on steering geometry, drivetrain sizing, braking torque, rollover limits, and turning performance using Python, CAD, and engineering analysis.
 
 ## Engineering Requirements 
 1. Kart shall accelerate from 0 to 30 mph in 10–12 seconds with a 160–200 lb driver.
@@ -29,17 +30,26 @@
 #### 5 Frame Mounting Points
 
 ### Chassis Geometry 
-#### Center of Mass and Tipping Prevention 
+#### Center of Mass, Sliding and Tipping Prevention 
 For a vehicle to make a turn, a frictional force is exerted by the tires to move the vehicle in the direction the wheel points. This frictional force must at a minimum equal or exceed the opposing centrifugal "force" to make the turn without sliding or skidding of the tire.  
 
+$$
+\f_{s} = μ FN
+$$
+
+$$
+Fc = \frac{mv^2}{r}
+$$
 $$
 μ W >= \frac{W v^2}{g r}
 $$
 
 The maximum velocity a gokart can go prior to sliding is thus:
+
 $$
 v = sqrt{μ g r}
 $$
+
 ### Brakes 
 #### Controlled & Effective Stop 
 
