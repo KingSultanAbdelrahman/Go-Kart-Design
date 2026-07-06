@@ -43,7 +43,11 @@ $$
 $$
 μ m g >= \frac{m v^2}{ r}
 $$
-
+where: 
+- \( F_c \) = required centripetal force
+- \( m \) = vehicle mass
+- \( v \) = vehicle speed
+- \( r \) = turn radius
 The maximum velocity a gokart can go prior to sliding is thus:
 
 $$
@@ -52,7 +56,7 @@ $$
 For a vehicle to not roll over or tip while turning, net torque must equal zero. 
 
 $$
-m g T/2 = Fc h
+m g T/2 >= Fc h
 $$
 
 ### Brakes 
