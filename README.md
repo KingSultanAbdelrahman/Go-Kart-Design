@@ -7,7 +7,7 @@
 2. Kart shall stop from 30 mph to 0 in ≤ 3 seconds on dry pavement.
 3. Kart shall complete 5 repeated 30-to-0 mph stops without brake fade or mechanical failure.
 4. Front steering geometry shall be within ±10–15% of ideal Ackermann angles across the normal steering range.
-5. Low-speed turning radius shall be ≤ ___ ft.
+5. Low-speed 10 mph turning radius shall be ≤ 12.5 ft.
 6. Kart shall not tip during steady-state turning at design cornering speed, with stability factor ≥ 1.3–1.5.
 7. Chassis shall meet FOS ≥ 2 against yield for vertical bump, braking, and lateral cornering load cases.
 8. Braking torque at the wheel shall be ≥ 2× engine idle drive torque at the wheel.
