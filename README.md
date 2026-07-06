@@ -31,7 +31,8 @@
 ### Chassis Geometry 
 #### Center of Mass and Tipping Prevention 
 $$
-μ W = \frac{W v^2}{g R}\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+For a vehicle to make a turn, a frictional force is exerted by the tires to move the vehicle in the direction of the wheel angle. This frictional force must at a minimum equal or exceed the opposing centrifugal "force" to make the turn without sliding or skidding of the tire.  
+μ W >= \frac{W v^2}{g R}
 $$
 
 ### Brakes 
