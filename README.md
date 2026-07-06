@@ -47,7 +47,12 @@ $$
 The maximum velocity a gokart can go prior to sliding is thus:
 
 $$
-v = sqrt{μ g r}
+v = \sqrt{μ g r}
+$$
+For a vehicle to not roll over or tip while turning, net torque must equal zero. 
+
+$$
+m g T/2 = Fc h
 $$
 
 ### Brakes 
