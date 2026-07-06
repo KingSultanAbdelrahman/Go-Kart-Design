@@ -31,7 +31,7 @@
 ### Chassis Geometry 
 #### Center of Mass and Tipping Prevention 
 $$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+μ*W = \frac{W*v^2}{g*R}\frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 
 ### Brakes 
