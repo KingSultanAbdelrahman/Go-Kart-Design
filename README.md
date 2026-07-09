@@ -58,60 +58,15 @@ Need to do a structural analsysis to design the actual chasis for load bearing w
 16. Measured acceleration, top speed, and braking performance shall match predictions within ±15–20%.
 ## Engineering Design Decisions 
 
-### Steering 
-#### 1. Steering Geometry
-#### 2. Wheelbase Track Width
-#### 3 Tierod-placement
-#### 4 Spindle and Kingpin Design
-#### 5 Frame Mounting Points
-
-### Stability and Rollover
-- Center of mass height estimate
-- Track width effect on tipping
-- Tipping moment vs resisting moment
-- Maximum safe cornering speed
-
-For a vehicle to make a turn, a frictional force is exerted by the tires to move the vehicle in the direction the wheel points. This frictional force must at a minimum equal or exceed the opposing centrifugal "force" to make the turn without sliding or skidding of the tire.  
-
-$$
-Ff = μ m g
-$$
-
-$$
-Fc = \frac{mv^2}{r}
-$$
-$$
-μ m g >= \frac{m v^2}{ r}
-$$
-
-where: 
-- \( F_c \) = required centripetal force
-- \( m \) = vehicle mass
-- \( v \) = vehicle speed
-- \( r \) = turn radius
-
-The maximum velocity a gokart can go prior to sliding is thus:
-
-$$
-v = \sqrt{μ g r}
-$$
-
-For a vehicle to not roll over or tip while making a turn, net torque must equal zero. 
-
-$$
-m g T/2 >= Fc h
-$$
-
-The maximum velocity a gokart can go prior to tipping is: 
-
-$$
-v = \sqrt{\frac{g T r}{2 h}}
-$$
-
 ### Drivetrain
-- Engine torque and RPM assumptions
 
-The net force required on the gokart to reach 30mph or 44ft/s in 12 secs, is:   
+Question: What Engine torque, RPM, gear ratio can yield 30mph speed in 12 seconds?
+ 
+The minimum net average force on the gokart to reach 30mph or 44ft/s in 12 secs, is:   
+
+$$
+a_{net} = 44/12 = 3.66 ft/s^2
+$$
 
 $$
 F_{net} = a_{net} m = \frac{vm}{t} = \frac{44 * m}{12} = 34.31lbf
@@ -146,13 +101,17 @@ $$
 F_{rolling} = 0.03 * 300 = 9lbf
 $$
 
+Using python, average drag for the 12 seconds is calculated to be approx 7 lbf. The required force felt at the wheel is 
+
 $$
-F_{wheel} = F{net} + Ffrolling = 43.3lbf 
+F_{wheel} = F{net} + F{rolling} + F{drag} = 34.2 + 9 + 7 = 50.2 lbf
 $$
 
-The force felt by the wheel is: 
+The force on the wheel is a function of the engine torque, gear ratio, gear efficency and driven wheel radius: 
 
+$$
 F_{wheel} = \frac{T{engine} * G * η}{r}
+$$
 
 where: 
 - \( T_{engine} \) = Engine Torque
@@ -160,11 +119,84 @@ where:
 - \( η ) = Gear Ratio Efficency
 - \( r ) = Driven Wheel Radius  
 
-The maximum torque of a Predator 212 engine is 8.1 ftlbs 
-  
+The maximum torque of a Predator 212 engine is 8.1 ftlbs. At a 5.5:1 gear ratio and a .625 ft wheel radius. Assuming a gear ratio efficency of .85:  
+
+$$
+  F_{wheel} = \frac {8.1 * 5.5 * .85} {.625} = 60 lbf 
+$$
+
+This force on the wheel is greater then the minimum required force and so the kart can accelerate to the maximum speed faster than the 12 second target. The net force present is:
+
+$$
+f_{net} = 60lbf - 9lbf - 7lb = 44lbf
+$$
+
+$$
+a_{net} = \frac {44 * 32.2} {m} = 4.69 ft/s
+$$  
+
+The time to reach top speed becomes 9.4 seconds:
+
+$$
+t = 44/ 4.69 = 9.4s
+$$
+
 - Gear ratio selection
 - Wheel torque calculation
 - Estimated top speed under load
+
+### Steering 
+#### 1. Steering Geometry
+#### 2. Wheelbase Track Width
+#### 3 Tierod-placement
+#### 4 Spindle and Kingpin Design
+#### 5 Frame Mounting Points
+
+### Stability and Rollover
+- Center of mass height estimate
+- Track width effect on tipping
+- Tipping moment vs resisting moment
+- Maximum safe cornering speed
+
+For a vehicle to make a turn, a frictional force is exerted by the tires to move the vehicle in the direction the wheel points. This frictional force must at a minimum equal or exceed the opposing centrifugal "force" to make the turn without sliding or skidding of the tire.  
+
+$$
+F{f} = μ m g
+$$
+
+$$
+F{c} = \frac{mv^2}{r}
+$$
+
+$$
+μ m g >= \frac{m v^2}{ r}
+$$
+
+where: 
+- \( F_c \) = required centripetal force
+- \( m \) = vehicle mass
+- \( v \) = vehicle speed
+- \( r \) = turn radius
+
+The maximum velocity a gokart can go prior to sliding is thus:
+
+$$
+v = \sqrt{μ g r}
+$$
+
+For a vehicle to not roll over or tip while making a turn, net torque must equal zero. 
+
+$$
+m g T/2 >= Fc h
+$$
+
+The maximum velocity a gokart can go prior to tipping is: 
+
+$$
+v = \sqrt{\frac{g T r}{2 h}}
+$$
+
+
 
 ### Braking System
 - Required braking torque
