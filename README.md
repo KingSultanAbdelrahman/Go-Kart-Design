@@ -5,21 +5,22 @@ A ground-up go-kart design project focused on steering geometry, drivetrain sizi
 
 ## Engineering Requirements 
 1. Kart shall accelerate from 0 to 30 mph in 10–12 seconds with a 160–200 lb driver.
-2. Kart shall stop from 30 mph to 0 in ≤ 3 seconds on dry pavement.
-3. Kart shall complete 5 repeated 30-to-0 mph stops without brake fade or mechanical failure.
-4. Front steering geometry shall be within ±10–15% of ideal Ackermann angles across the normal steering range.
-5. Low-speed 10 mph turning radius shall be ≤ 12.5 ft.
-6. Kart shall not tip during steady-state turning at design cornering speed, with stability factor ≥ 1.3–1.5.
-7. Chassis shall meet FOS ≥ 2 against yield for vertical bump, braking, and lateral cornering load cases.
-8. Braking torque at the wheel shall be ≥ 2× engine idle drive torque at the wheel.
-9. Throttle shall automatically return to idle within 1 second after release.
-10. Kart shall include driver-accessible and external kill switches.
-11. Chain and sprockets shall be guarded from driver contact.
-12. Chain alignment error shall be ≤ 1–2 mm, with adjustable chain tension.
-13. Driven sprocket shall be swappable in ≤ 15 minutes using common tools.
-14. Kart shall complete a 30-minute endurance test with no critical failures.
-15. Measured acceleration, top speed, and braking performance shall match predictions within ±15–20%.
-16. Final deliverables shall include CAD assembly, drawings, BOM, calculations, test plan, test data, and design review report.
+Solved by back engineering required engine force on wheel and python code acceleration at 5.5 gear ratio   
+3. Kart shall stop from 30 mph to 0 in ≤ 3 seconds on dry pavement.
+4. Kart shall complete 5 repeated 30-to-0 mph stops without brake fade or mechanical failure.
+5. Front steering geometry shall be within ±10–15% of ideal Ackermann angles across the normal steering range.
+6. Low-speed 10 mph turning radius shall be ≤ 12.5 ft.
+7. Kart shall not tip during steady-state turning at design cornering speed, with stability factor ≥ 1.3–1.5.
+8. Chassis shall meet FOS ≥ 2 against yield for vertical bump, braking, and lateral cornering load cases.
+9. Braking torque at the wheel shall be ≥ 2× engine idle drive torque at the wheel.
+10. Throttle shall automatically return to idle within 1 second after release.
+11. Kart shall include driver-accessible and external kill switches.
+12. Chain and sprockets shall be guarded from driver contact.
+13. Chain alignment error shall be ≤ 1–2 mm, with adjustable chain tension.
+14. Driven sprocket shall be swappable in ≤ 15 minutes using common tools.
+15. Kart shall complete a 30-minute endurance test with no critical failures.
+16. Measured acceleration, top speed, and braking performance shall match predictions within ±15–20%.
+17. Final deliverables shall include CAD assembly, drawings, BOM, calculations, test plan, test data, and design review report.
 ## Engineering Design Decisions 
 
 ### Steering 
@@ -82,11 +83,27 @@ F_{net} = a_{net} m = \frac{vm}{t} = \frac{44 * m}{12} = 34.31lbf
 $$
 
 $$
-F_{net} = F_{wheel} - F_{rolling}
+F_{net} = F_{wheel} - F_{rolling} - F_{drag}
 $$
 
 where: 
 - \( F_{wheel} \) = required forward force felt by the wheel
+
+$$
+F_{drag} = \frac {C_{d} ρ A v^2}{2} 
+$$
+
+where: 
+- \( C_{d} \) = drag coefficent
+- \(ρ \) = density of air
+- \(A \) = surface area of gokart front
+- \(v \) = velocity
+
+Assumping ρ = 0.0765 lb/ft³, C_{d} = .8, A = 1 m^2 = 10.76 ft^2. as v increases, F_{d} grows and resists acceleration of the gokart.  At max speed v= 30mph, 44ft/s 
+
+$$
+F_{drag} = 20lbf  
+$$
 
 Assuming rolling friction coffeicent = 0.03 and W = 300lbs
 
